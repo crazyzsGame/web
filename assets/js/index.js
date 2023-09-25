@@ -2,7 +2,7 @@ let categories = {};
 let objKey,
     gamee4 = {};
 const categoriesDiv = document.getElementById("main-div");
-const show = false;
+const show = true;
 $("#main-div").hide();
 function mathRamdom(max, min) {
     return `${`${Math.random() * (max - min) + min}`.split(".")[0]}`;
@@ -51,7 +51,7 @@ const apiCall = () => {
                 var categoriesData = '';
                 objKey?.forEach((key, index) => {
                     categoriesData += `
-                        <div class="categories-container">
+                        <div class="categories-container" style="display: none;">
                             <div class="categories-titleContainer">
                                 <div class="categories-title">
                                     <h4>${key} Game</h4>
@@ -64,6 +64,7 @@ const apiCall = () => {
                         </div>
                     `;
                     ;
+                    // categoriesData += ``
                     if (index === 1 && show) {
 
                         categoriesData += `
